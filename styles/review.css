@@ -1,0 +1,312 @@
+:root {
+  --bg: #f6f7f8;
+  --text: #111827;
+  --mut: #6b7280;
+  --border: #e5e7eb;
+  --accent1: #167aa6;
+  --accent2: #0b9a8f;
+  --pill: #e6f5f2;
+  --radius: 18px;
+}
+
+/* ===== Общие стили ===== */
+* { box-sizing: border-box; }
+html, body {
+  height: 100%;
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.5 Inter, system-ui, Arial;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+/* ===== Шапка ===== */
+.hdr {
+  color: #fff;
+  background: linear-gradient(90deg, var(--accent1), var(--accent2));
+}
+
+.hdr__bar {
+  max-width: 1200px;
+  margin: auto;
+  padding: 14px 20px;
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+
+.logo {
+  font-weight: 800;
+  font-size: 32px;
+  line-height: 42px;
+}
+
+nav a {
+  margin: 0 10px;
+  opacity: .95;
+  text-decoration: none;
+  color: #fff;
+}
+
+.search {
+  flex: 1;
+  max-width: 520px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: none;
+}
+
+.btn {
+  background: #0b9a8f;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 16px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn--ghost {
+  background: #fff;
+  color: #0b9a8f;
+  border: 1px solid var(--border);
+}
+
+.btn--danger {
+  background: #fff;
+  color: #b91c1c;
+  border: 1px solid #fca5a5;
+}
+
+.btn--sm {
+  padding: 6px 10px;
+  font-size: 14px;
+}
+
+/* ===== Герой (заголовок) ===== */
+.hdr__hero {
+  max-width: 1200px;
+  margin: 6px auto 20px;
+  padding: 0 20px 18px;
+  text-align: center;
+}
+
+.hdr__hero h1 {
+  font-size: 32px;
+  line-height: 42px;
+  margin: 0;
+}
+
+.hdr__hero p {
+  font-size: 18px;
+  color: #fff;
+  margin-top: 5px;
+}
+
+/* ===== Карточки ===== */
+.wrap {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #d2d4d6;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px;
+}
+
+.card h3 {
+  margin: 10px 0 6px;
+}
+
+.card p {
+  margin: 0 0 8px;
+}
+
+.thumb {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+}
+
+/* ===== Фильтры ===== */
+.filters {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.pill {
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: var(--pill);
+  color: #0b5b58;
+  border: 1px solid #cfece6;
+}
+
+/* ===== Список ===== */
+.list {
+  display: grid;
+  gap: 16px;
+}
+
+.item {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 16px;
+}
+
+.item__top {
+  display: flex;
+  justify-content: space-between;
+  color: var(--mut);
+  font-size: 14px;
+}
+
+.muted { color: var(--mut); }
+.stars { color: #f59e0b; margin: 6px 0; }
+
+.hero {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  margin: 10px 0;
+}
+
+/* ===== Формы ===== */
+.form {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 16px;
+  display: grid;
+  gap: 12px;
+  max-width: 780px;
+}
+
+input[type=text],
+input[type=date],
+textarea,
+select {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: #fff;
+  font: inherit;
+}
+
+textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+/* ===== Футер (компактная версия) ===== */
+.footer{
+  background:#fff;
+  padding: 24px 20px;                /* было 40px — сделали ниже */
+  border-top:1px solid #e5e5e5;
+}
+
+.footer__inner{
+  max-width:1200px;
+  margin:0 auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;            /* поднимает бренд и соцсети визуально */
+  flex-wrap:wrap;
+  gap:24px;                          /* было 40px — плотнее */
+}
+
+.footer__brand{
+  flex:1 1 240px;                    /* немного шире, чтобы логотип и иконки не “прыгали” */
+  min-width:220px;
+}
+
+.footer__brand h2{
+  font-size:24px;
+  font-weight:700;
+  margin:0 0 12px;                   /* было 20px — компактнее */
+}
+
+.footer__social{
+  display:flex;
+  align-items:center;
+  gap:12px;                          /* было 20px — плотнее */
+  flex-wrap:wrap;                    /* чтобы на узких экранах переносились */
+}
+
+.footer__social a img{
+  width: 20px; /* размер по ширине */
+  height: auto;
+  opacity:.7;
+  transition:opacity .2s ease;
+}
+.footer__social a:hover img{ opacity:1; }
+
+/* ===== Ссылочные колонки ===== */
+.footer__links{
+  display:flex;
+  gap:48px;                          /* было 60px — компактнее */
+  flex-wrap:wrap;
+}
+
+.footer__column{
+  display:flex;
+  flex-direction:column;
+  gap:10px;                          /* было 12px — чуть плотнее */
+  min-width:160px;
+}
+
+.footer__column h3{
+  font-size:16px;
+  font-weight:700;
+  margin:0 0 4px;
+}
+
+.footer__column a{
+  text-decoration:none;
+  color:#555;
+  font-size:14px;
+  transition:color .2s ease;
+}
+.footer__column a:hover{ color:#000; }
+
+/* ===== Адаптив ===== */
+@media (max-width: 980px){
+  .cards{ grid-template-columns:1fr 1fr; }
+  .footer__links{ gap:32px; }
+}
+@media (max-width: 640px){
+  .cards{ grid-template-columns:1fr; }
+  .footer__inner{ gap:20px; }
+  .footer__brand h2{ font-size:22px; }
+}
